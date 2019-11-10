@@ -143,10 +143,6 @@ def main ():
     while True: 
         road_state = tick(road_state, history)
         
-        print(history.__repr__())
-        print(road_state)
-        
-        
         strings = ["Good to drive!", "Lots of snow fell recently, be careful!", "Ice has formed, stay frosty!", "Slush is on the road, keep an eye out", "Roads are wet, keep your withs about you!"]
         ret = ""
         if road_state.ice > 0.2:
@@ -166,7 +162,6 @@ def main ():
             html_file = f.read()
          
         html_file = re.sub('<span>[\s\S]+</span>', "<span>%s</span>" % final_output, html_file) 
-        print(html_file)
         with open("frontend.html", "w") as f:
             f.write(html_file)
 
